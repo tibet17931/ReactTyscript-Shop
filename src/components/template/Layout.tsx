@@ -4,10 +4,11 @@ import Header from "./Header";
 import SideMenu from "./SideMenu";
 import Footer from "./Footer";
 import { Switch } from "react-router-dom";
+import PrivateRouter from "../../routes/private.route";
 
 const { Content } = Layout;
 
-export default (routes: any) => {
+export default ({ routes }: { routes: any }) => {
   return (
     <Layout style={{ minHeight: "100vh" }}>
       <SideMenu />
@@ -19,9 +20,9 @@ export default (routes: any) => {
             <Breadcrumb.Item>Bill</Breadcrumb.Item>
           </Breadcrumb>
           <Switch>
-            {/* {routes.map((route:any, i:any) => (
-              // <RouteWithSubRoutes key={i} {...route} />
-            ))} */}
+            {routes.map((route: any, i: any) => (
+              <PrivateRouter key={i} {...route} />
+            ))}
           </Switch>
         </Content>
         <Footer />

@@ -2,10 +2,9 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
 export default (route: any) => {
-  console.log("private");
-  console.log(route);
-  let token = localStorage.getItem("token");
-  return token ? (
+  let isAuthenticated = localStorage.getItem("token");
+
+  return isAuthenticated ? (
     <Route
       path={route.path}
       render={(props) => (

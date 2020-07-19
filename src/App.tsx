@@ -6,12 +6,17 @@ import PrivateRouter from "./routes/private.route";
 import "./App.css";
 
 function App() {
-  localStorage.setItem("token", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+  // localStorage.setItem("token", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
   return (
     <Router>
       <Switch>
         {routes.map((route, i) => {
-          return <RouteWithSubRoutes key={i} {...route} />;
+          console.log(route.routes);
+          return route.routes ? (
+            <PrivateRouter key={i} {...route} />
+          ) : (
+            <PublicRouter key={i} {...route} />
+          );
         })}
       </Switch>
     </Router>
