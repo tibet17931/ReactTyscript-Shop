@@ -28,8 +28,16 @@ export default () => {
       collapsedWidth="0"
       trigger={null}
       onBreakpoint={(broken) => {
-        if (broken === true) dispatch({ type: "COLLAPSED", payload: true });
-        else dispatch({ type: "COLLAPSED", payload: !collapsed });
+        if (broken === true)
+          dispatch({
+            type: "COLLAPSED",
+            payload: { collapsed: true, broken: broken },
+          });
+        else
+          dispatch({
+            type: "COLLAPSED",
+            payload: { collapsed: !collapsed, broken: broken },
+          });
       }}
     >
       <div className="ant-pro-sider-logo" id="logo">

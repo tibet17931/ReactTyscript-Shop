@@ -3,8 +3,9 @@ import Layout from "../components/template/Layout";
 
 const routes = [
   {
-    path: "/home",
+    path: "/",
     component: Home,
+    exact: true,
   },
   {
     path: "/admin",

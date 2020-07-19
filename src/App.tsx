@@ -4,6 +4,7 @@ import routes from "./routes";
 import PublicRouter from "./routes/public.route";
 import PrivateRouter from "./routes/private.route";
 import "./App.css";
+import { Icon } from "@ant-design/compatible";
 
 function App() {
   // localStorage.setItem("token", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
@@ -20,18 +21,6 @@ function App() {
         })}
       </Switch>
     </Router>
-  );
-}
-
-function RouteWithSubRoutes(route: any) {
-  return (
-    <Route
-      path={route.path}
-      render={(props) => (
-        // pass the sub-routes down to keep nesting
-        <route.component {...props} routes={route.routes} />
-      )}
-    />
   );
 }
 
