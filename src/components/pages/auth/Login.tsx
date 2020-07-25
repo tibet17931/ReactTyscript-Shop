@@ -19,7 +19,7 @@ class formlogin extends Component {
 					>	Username
 					</label>
 					<div className="col-sm-12">
-						<input type="text" name="txt_username" className="form-control" required placeholder="Enter username"></input>
+						<input type="text" className="form-control" required placeholder="Enter username"></input>
 						<hr></hr>
 					</div>
 					<label
@@ -28,13 +28,13 @@ class formlogin extends Component {
 					</label>
 					<div className="col-sm-12">
 						<input
-							type="password" name="txt_password" className="form-control" required placeholder="Enter password"></input>
+							type="password" className="form-control" required placeholder="Enter password"></input>
 						<hr></hr>
 					</div>
 					<div className="form-group">
 						<div className="btn">
 							<button
-								type="submit" name="btn_login"
+								type="submit"
 							> Login
 							</button>
 						</div>
