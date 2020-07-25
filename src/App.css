@@ -59,12 +59,68 @@ div.container {
   background: #141414;
 }
 
-.antd-pro-components-global-header-index-right {
+.right___2CMz5 {
   display: flex;
   float: right;
   height: 48px;
   margin-left: auto;
   overflow: hidden;
+}
+.right___2CMz5 .action___3ut1O {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.right___2CMz5 .account___1r_Ku .avatar___1Rx79 {
+  margin: calc((64px - 24px) / 2) 0;
+  margin-right: 8px;
+  color: #1890ff;
+  vertical-align: top;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.ant-avatar-sm {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 50%;
+}
+
+.ant-avatar-image {
+  background: transparent;
+}
+
+.right___2CMz5 .action___3ut1O > span {
+  vertical-align: middle;
+}
+
+/* .anticon {
+  display: inline-block;
+  color: inherit;
+  font-style: normal;
+  line-height: 0;
+  text-align: center;
+  text-transform: none;
+  vertical-align: -0.125em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+body {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* font-variant: tabular-nums; */
+  /* line-height: 1.5715; */
+  /* background-color: #fff; */
+  /* font-feature-settings: 'tnum', "tnum"; */
 }
 
 .ant-pro-sider .ant-layout-sider-children {
@@ -102,4 +158,43 @@ div.container {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.ant-card {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: "tnum", "tnum";
+  position: relative;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.ant-card-head {
+  min-height: 48px;
+  margin-bottom: -1px;
+  padding: 0 24px;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  font-size: 16px;
+  background: transparent;
+  border-bottom: 1px solid #f0f0f0;
+  border-radius: 2px 2px 0 0;
+}
+.ant-card-body {
+  padding: 24px;
+}
+
+.ant-card-head-title {
+  display: inline-block;
+  flex: 1 1;
+  padding: 16px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

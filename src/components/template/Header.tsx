@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../reducers/rootReducer";
-import { Layout, Menu, Drawer } from "antd";
+import { Layout, Menu, Drawer, Dropdown, Avatar, Badge } from "antd";
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
-  DesktopOutlined,
-  PieChartOutlined,
-  FileOutlined,
-  TeamOutlined,
-  UserOutlined,
+  SettingOutlined,
 } from "@ant-design/icons";
+
+import MenuMain from "./Menu";
 
 const { Header } = Layout;
 const { SubMenu } = Menu;
@@ -39,6 +37,14 @@ export default () => {
     else showDrawer();
   };
 
+  let head_menu = (
+    <Menu>
+      <Menu.Item key="1">Profile</Menu.Item>
+      <Menu.Item key="2">nav 2</Menu.Item>
+      <Menu.Item key="3">Logout</Menu.Item>
+    </Menu>
+  );
+
   return (
     <Header className="site-layout-background" style={{ padding: 0 }}>
       {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
@@ -59,39 +65,38 @@ export default () => {
             <h1>Shop Admin</h1>
           </a>
         </div>
-        <Menu
-          theme="dark"
-          className="ant-pro-sider ant-layout-sider-children"
-          defaultSelectedKeys={["1"]}
-          mode="inline"
-        >
-          <Menu.Item key="1" icon={<PieChartOutlined />}>
-            Option 1
-          </Menu.Item>
-          <Menu.Item key="2" icon={<DesktopOutlined />}>
-            Option 2
-          </Menu.Item>
-          <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-            <Menu.Item key="3">Tom</Menu.Item>
-            <Menu.Item key="4">Bill</Menu.Item>
-            <Menu.Item key="5">Alex</Menu.Item>
-          </SubMenu>
-          <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
-            <Menu.Item key="6">Team 1</Menu.Item>
-            <Menu.Item key="8">Team 2</Menu.Item>
-          </SubMenu>
-          <Menu.Item key="9" icon={<FileOutlined />} />
-        </Menu>
+        <MenuMain nameClass="ant-pro-sider ant-layout-sider-children" />
       </Drawer>
-      <Menu
-        className="antd-pro-components-global-header-index-right"
-        mode="horizontal"
-        defaultSelectedKeys={["2"]}
-      >
-        <Menu.Item key="1">nav 1</Menu.Item>
-        <Menu.Item key="2">nav 2</Menu.Item>
-        <Menu.Item key="3">nav 3</Menu.Item>
-      </Menu>
+      <div className="right___2CMz5">
+        {/* <Dropdown overlay={head_menu} placement="bottomLeft">
+          <span className="action___3ut1O account___1r_Ku ant-dropdown-trigger">
+            <span className="avatar___1Rx79 ant-avatar-sm ant-avatar-circle ant-avatar-image">
+              <Badge count={1}>
+                <Avatar size={22} shape="circle" icon={<BellOutlined />} />
+              </Badge>
+            </span>
+          </span>
+        </Dropdown> */}
+        <Dropdown overlay={head_menu} placement="bottomLeft">
+          <span className="action___3ut1O account___1r_Ku ant-dropdown-trigger">
+            <span className="ant-avatar avatar___1Rx79 ant-avatar-sm ant-avatar-circle ant-avatar-image">
+              <img
+                src="https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"
+                alt="avatar"
+              />
+            </span>
+            <span className="name___2eduw anticon">Tibet Pedrod</span>
+          </span>
+        </Dropdown>
+        <Dropdown overlay={head_menu} placement="bottomLeft">
+          <span className="action___3ut1O account___1r_Ku ant-dropdown-trigger">
+            <SettingOutlined
+              className="trigger"
+              style={{ paddingLeft: 12, paddingRight: 12 }}
+            />
+          </span>
+        </Dropdown>
+      </div>
     </Header>
   );
 };

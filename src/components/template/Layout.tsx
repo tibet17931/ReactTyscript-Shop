@@ -3,12 +3,26 @@ import { Layout, Breadcrumb } from "antd";
 import Header from "./Header";
 import SideMenu from "./SideMenu";
 import Footer from "./Footer";
-import { Switch } from "react-router-dom";
+import { Switch, useLocation, Link } from "react-router-dom";
 import PrivateRouter from "../../routes/private.route";
+import { breadcrumbNameMap } from "../../config/menu.config";
 
 const { Content } = Layout;
 
 export default ({ routes }: { routes: any }) => {
+  const location: any = useLocation();
+  const pathSnippets = location.pathname.split("/").filter((i: any) => i);
+  const extraBreadcrumbItems = pathSnippets.map((_: any, index: any) => {
+    const url = `/${pathSnippets.slice(0, index + 1).join("/")}`;
+    return (
+      <Breadcrumb.Item key={url}>
+        <Link to={url}> {breadcrumbNameMap[url]}</Link>
+      </Breadcrumb.Item>
+    );
+  });
+
+  const breadcrumbItems = [].concat(extraBreadcrumbItems);
+
   return (
     <Layout style={{ minHeight: "100vh" }}>
       <SideMenu />
@@ -16,8 +30,7 @@ export default ({ routes }: { routes: any }) => {
         <Header />
         <Content style={{ margin: "0 16px" }}>
           <Breadcrumb style={{ margin: "16px 0" }}>
-            <Breadcrumb.Item>User</Breadcrumb.Item>
-            <Breadcrumb.Item>Bill</Breadcrumb.Item>
+            {breadcrumbItems}
           </Breadcrumb>
           <Switch>
             {routes.map((route: any, i: any) => (

@@ -1,4 +1,6 @@
 import Home from "../components/pages/Home";
+import Test from "../components/pages/Test";
+import Fashion from "../components/pages/category/Fashion";
 import Layout from "../components/template/Layout";
 
 const routes = [
@@ -8,12 +10,16 @@ const routes = [
     exact: true,
   },
   {
-    path: "/admin",
+    path: "/Admin",
     component: Layout,
     routes: [
       {
-        path: "/admin/home",
+        path: "/Admin/Dashboard",
         component: Home,
+      },
+      {
+        path: "/Admin/Category/Fashion",
+        component: Fashion,
       },
     ],
   },
