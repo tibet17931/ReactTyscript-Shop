@@ -1,0 +1,45 @@
+body {
+    background-image: url(https://stepstraining.co/wp-content/uploads/2017/10/jad-limcaco-272413.jpg); 
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.formlogin {
+    background-color : black;
+    width : 30rem;
+    margin-top: 10rem!important;
+    margin-left: 35%!important;
+}
+.form-group {
+    text-align: center;
+}
+.Login {
+ background-color: black;
+ color :white;
+ text-align: center;
+ font-family: "Lucida Console", Courier, monospace;
+ border-radius: 5rem;
+}
+.btn {
+    margin-top: 1rem;
+    border-radius: 1px;
+}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
