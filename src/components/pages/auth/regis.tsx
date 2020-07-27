@@ -1,54 +1,126 @@
 import React, { Component } from "react";
 import "../auth/regis.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Regis extends Component {
 	render() {
 		return (
-			<div className="container regis_form">
-				<h1>
-					<strong>
-						<hr></hr>Register
-						Form <hr></hr>
-					</strong>
-				</h1>
-				<div className="col1">
-					<input
-						type="text"
-						name="txt_Firstname"
-						required
-						placeholder="Enter Firstname"
-					></input>
-				</div>
-				<div className="col2">
-					<input
-						type="text"
-						name="txt_Lastname"
-						required
-						placeholder="Enter Lastname"
-					></input>
-
-					<input
-						type="email"
-						name="txt_email"
-						required
-						placeholder="Enter Email"
-					></input>
-
-					<input
-						type="email"
-						name="txt_email"
-						className="form-control"
-						required
-						placeholder="Enter Email"
-					></input>
-
-					<input
-						type="email"
-						name="txt_email"
-						className="form-control"
-						required
-						placeholder="Enter Email"
-					></input>
+			<div className="container">
+				<div className="card bg-light">
+					<h1 className="card-title mt-3 text-center">
+						Create Account
+					</h1>
+					<p className="text-center">
+						Get started with
+						your free account
+					</p>
+					<form>
+						<div className="form-group input-group">
+							<div className="input-group-prepend">
+								<span className="input-group-text">
+									<div>
+										<FontAwesomeIcon
+											icon={
+												faUser
+											}
+										/>
+									</div>
+								</span>
+							</div>
+							<input
+								className="form-control"
+								placeholder="Full name"
+								type="text"
+							></input>
+						</div>
+						<div className="form-group input-group">
+							<div className="input-group-prepend">
+								<span className="input-group-text">
+									<div>
+										<FontAwesomeIcon
+											icon={
+												faUser
+											}
+										/>
+									</div>
+								</span>
+							</div>
+							<input
+								className="form-control"
+								placeholder="Email address"
+								type="email"
+							></input>
+						</div>
+						<div className="form-group input-group">
+							<div className="input-group-prepend">
+								<span className="input-group-text">
+									<div>
+										<FontAwesomeIcon
+											icon={
+												faEnvelope
+											}
+										/>
+									</div>
+								</span>
+							</div>
+							<input
+								className="form-control"
+								placeholder="Phone number"
+								type="text"
+							></input>
+						</div>
+						<div className="form-group input-group">
+							<div className="input-group-prepend">
+								<span className="input-group-text">
+									<i className="fa fa-building"></i>
+								</span>
+							</div>
+						</div>
+						<div className="form-group input-group">
+							<div className="input-group-prepend">
+								<span className="input-group-text">
+									<i className="fa fa-lock"></i>
+								</span>
+							</div>
+							<input
+								className="form-control"
+								placeholder="Create password"
+								type="password"
+							></input>
+						</div>
+						<div className="form-group input-group">
+							<div className="input-group-prepend">
+								<span className="input-group-text">
+									<i className="fa fa-lock"></i>
+								</span>
+							</div>
+							<input
+								className="form-control"
+								placeholder="Confirm password"
+								type="password"
+							></input>
+						</div>
+						<div className="form-group">
+							<button
+								type="submit"
+								className="btn btn-primary btn-block"
+							>
+								Create
+								Account
+							</button>
+						</div>
+						<p className="text-center">
+							Have an
+							account?
+							<a href="Login">
+								Log
+								In
+							</a>
+						</p>
+					</form>
 				</div>
 			</div>
 		);
