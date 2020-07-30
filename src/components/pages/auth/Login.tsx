@@ -51,7 +51,7 @@ class formlogin extends Component {
 						</div>
 						<div className="form-group">
 							<div className="btn">
-								<button type="submit">
+								<button type="submit" className="btn-login">
 									{" "}
 									Login
 								</button>
