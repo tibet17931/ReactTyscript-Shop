@@ -14,10 +14,10 @@ export default (route: any) => {
       )}
     />
   ) : (
-    <Redirect
-      to={{
-        pathname: "/home",
-      }}
-    />
-  );
+      <Redirect
+        to={{
+          pathname: "/Login",
+        }}
+      />
+    );
 };

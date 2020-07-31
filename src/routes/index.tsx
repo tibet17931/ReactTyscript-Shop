@@ -1,12 +1,18 @@
 import Home from "../components/pages/Home";
 import Test from "../components/pages/Test";
 import Fashion from "../components/pages/category/Fashion";
+import Login from "../components/pages/login/Login";
 import Layout from "../components/template/Layout";
 
 const routes = [
+  // {
+  //   path: "/",
+  //   component: Home,
+  //   exact: true,
+  // },
   {
-    path: "/",
-    component: Home,
+    path: "/Login",
+    component: Login,
     exact: true,
   },
   {
