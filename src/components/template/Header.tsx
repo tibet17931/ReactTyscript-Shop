@@ -6,14 +6,17 @@ import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
   SettingOutlined,
+  LogoutOutlined
 } from "@ant-design/icons";
 
 import MenuMain from "./Menu";
+import { Switch, useHistory } from "react-router-dom";
 
 const { Header } = Layout;
 const { SubMenu } = Menu;
 
 export default () => {
+  const history = useHistory();
   const collapsed = useSelector(
     (state: RootState) => state.layoutReducer.collapsed
   );
@@ -36,12 +39,28 @@ export default () => {
       });
     else showDrawer();
   };
+  let logout = ({ item, key, keyPath, domEvent }: { item: any, key: string | Number, keyPath: any, domEvent: any }) => {
+    console.log(key)
+
+    switch (key) {
+      case 'Logout':
+        localStorage.removeItem('token')
+        history.push('/Login')
+        break;
+      case 'Profile':
+        // code block
+        break;
+      case 'Setting':
+        // code block
+        break;
+    }
+  }
 
   let head_menu = (
-    <Menu>
-      <Menu.Item key="1">Profile</Menu.Item>
-      <Menu.Item key="2">nav 2</Menu.Item>
-      <Menu.Item key="3">Logout</Menu.Item>
+    <Menu onClick={logout}>
+      <Menu.Item key="Profile">Profile</Menu.Item>
+      <Menu.Item key="Setting">Setting</Menu.Item>
+      <Menu.Item key="Logout"> <LogoutOutlined />Logout</Menu.Item>
     </Menu>
   );
 

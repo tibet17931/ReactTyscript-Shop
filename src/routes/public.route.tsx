@@ -13,10 +13,10 @@ export default (route: any) => {
       )}
     />
   ) : (
-    <Redirect
-      to={{
-        pathname: "/admin",
-      }}
-    />
-  );
+      <Redirect
+        to={{
+          pathname: "/Admin",
+        }}
+      />
+    );
 };

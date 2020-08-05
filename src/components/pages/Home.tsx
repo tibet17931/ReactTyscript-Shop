@@ -1,7 +1,8 @@
-import React from "react";
-import { Form, Input, InputNumber, Button } from "antd";
+import React, { useState, useEffect } from "react";
+import { Form, Input, InputNumber, Button, Progress } from "antd";
 
 export default () => {
+  let [dataProgress, setProgress] = useState(0)
   const layout = {
     labelCol: { span: 8 },
     wrapperCol: { span: 16 },
@@ -21,8 +22,18 @@ export default () => {
   const onFinish = (values: any) => {
     console.log(values);
   };
+
+  useEffect(() => {
+    for (let i = 0; i <= 100; i++) {
+      setTimeout(function () {
+        setProgress(i)
+      }, 1000)
+    }
+  }, [])
+
   return (
     <div className="container">
+      <Progress type="circle" percent={dataProgress} format={percent => `${percent} Days`} />
       <Form
         {...layout}
         name="nest-messages"
