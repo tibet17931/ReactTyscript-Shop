@@ -6,7 +6,8 @@ import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
   SettingOutlined,
-  LogoutOutlined
+  LogoutOutlined,
+  UserOutlined
 } from "@ant-design/icons";
 
 import MenuMain from "./Menu";
@@ -17,6 +18,10 @@ const { SubMenu } = Menu;
 
 export default () => {
   const history = useHistory();
+
+  let profile: any = localStorage.getItem('profile')
+  profile = JSON.parse(profile)
+  // console.log(profile)
   const collapsed = useSelector(
     (state: RootState) => state.layoutReducer.collapsed
   );
@@ -58,8 +63,8 @@ export default () => {
 
   let head_menu = (
     <Menu onClick={logout}>
-      <Menu.Item key="Profile">Profile</Menu.Item>
-      <Menu.Item key="Setting">Setting</Menu.Item>
+      <Menu.Item key="Profile"><UserOutlined />Profile</Menu.Item>
+      <Menu.Item key="Setting"><SettingOutlined /> Setting</Menu.Item>
       <Menu.Item key="Logout"> <LogoutOutlined />Logout</Menu.Item>
     </Menu>
   );
@@ -100,21 +105,21 @@ export default () => {
           <span className="action___3ut1O account___1r_Ku ant-dropdown-trigger">
             <span className="ant-avatar avatar___1Rx79 ant-avatar-sm ant-avatar-circle ant-avatar-image">
               <img
-                src="https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"
+                src={profile.avatar}
                 alt="avatar"
               />
             </span>
-            <span className="name___2eduw anticon">Tibet Pedrod</span>
+            <span className="name___2eduw anticon">{profile.fullname}</span>
           </span>
         </Dropdown>
-        <Dropdown overlay={head_menu} placement="bottomLeft">
+        {/* <Dropdown overlay={head_menu} placement="bottomLeft">
           <span className="action___3ut1O account___1r_Ku ant-dropdown-trigger">
             <SettingOutlined
               className="trigger"
               style={{ paddingLeft: 12, paddingRight: 12 }}
             />
           </span>
-        </Dropdown>
+        </Dropdown> */}
       </div>
     </Header>
   );

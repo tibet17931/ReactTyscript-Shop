@@ -3,7 +3,8 @@ import { Row, Col, Typography, Form, Input, Button, Checkbox, Avatar, } from "an
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { AuthService } from '../../../services/auth.service';
 import { warningModal } from '../../้helpers'
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
+// import { Link, useLocation, useHistory } from "react-router-dom";
 import "./login.css";
 
 const service = new AuthService()
@@ -94,7 +95,8 @@ export default () => {
                             >
                                 Log in
                             </Button>
-                                Or <a href="/Register">register now!</a>
+                                Or &nbsp;
+                                <Link to="/Register">register now!</Link>
                         </Form.Item>
                     </Form>
                 </Col>
