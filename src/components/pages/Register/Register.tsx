@@ -164,12 +164,12 @@ export default () => {
                         name="username"
                         rules={[
                             { required: true, message: "Please input your Username!" },
-                            { required: true, min: 8 },
-                            { required: true, max: 50 }
+                            { required: true, min: 8, message: "'username' must be at least 8 characters" },
+                            { required: true, max: 50, message: "'username' cannot be longer than 50 characters" }
                         ]}
                     >
                         <Input
-                            prefix={<UserOutlined className="site-form-item-icon" />}
+                            prefix={<UserOutlined />}
                             placeholder="Username"
                         />
                     </Form.Item>
@@ -212,6 +212,10 @@ export default () => {
                     <Form.Item style={{ marginBottom: 0 }} >
                         <Form.Item
                             name="firstname"
+                            rules={[{
+                                required: true,
+                                message: 'Please confirm your firstname!',
+                            }]}
                             style={{ display: 'inline-block', width: 'calc(50% - 12px)' }}>
                             <Input placeholder="FirstName" />
                         </Form.Item>
@@ -220,6 +224,10 @@ export default () => {
                         </span>
                         <Form.Item
                             name="lastname"
+                            rules={[{
+                                required: true,
+                                message: 'Please confirm your lastname!',
+                            }]}
                             style={{ display: 'inline-block', width: 'calc(50% - 12px)' }}>
                             <Input placeholder="LastName" />
                         </Form.Item>
@@ -231,6 +239,10 @@ export default () => {
                     >
                         <Form.Item
                             name="birthday"
+                            rules={[{
+                                required: true,
+                                message: 'Please confirm your birthday!',
+                            }]}
                             style={{ display: 'inline-block', width: 'calc(50% - 12px)' }}
                         >
 

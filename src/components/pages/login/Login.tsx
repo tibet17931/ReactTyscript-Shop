@@ -13,7 +13,7 @@ const { Title } = Typography;
 
 export default () => {
     const history = useHistory();
-
+    console.log(process.env)
     const onFinish = async (values: any) => {
         try {
             let { data } = await service.loginService(values)

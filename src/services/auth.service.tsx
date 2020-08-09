@@ -1,18 +1,13 @@
 import axios from 'axios'
-import FormData from 'form-data';
-const instance = axios.create({
-    baseURL: 'https://node-shopadmin.herokuapp.com/v1',
-    // timeout: 1000,
-    // headers: { 'X-Custom-Header': 'foobar' }
-});
+import getConfig from '../config'
 
 export class AuthService {
 
     service: any
-
+    config: any = getConfig.config
     constructor() {
         this.service = axios.create({
-            baseURL: 'http://localhost:4000/v1',
+            baseURL: this.config.internal.url,
             // timeout: 1000,
             headers: { 'access-control-allow-origin': '*' }
         });
@@ -25,9 +20,7 @@ export class AuthService {
     }
 
     async registerService(data: any) {
-
         let result = await this.service.post('/registor', data);
-        // console.log(result)
         return result
     }
 }
